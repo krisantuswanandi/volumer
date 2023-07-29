@@ -1,7 +1,15 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import uno from "unocss/vite";
+import { crx } from "@crxjs/vite-plugin";
+import manifest from "./manifest.config";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-})
+  plugins: [vue(), uno(), crx({ manifest })],
+  server: {
+    port: 3000,
+    hmr: {
+      port: 3000,
+    },
+  },
+});
