@@ -11,8 +11,11 @@ onMounted(async () => {
 
 <template>
   <div class="w-80 p1 font-sans">
-    <div v-if="tabs">
+    <div v-if="tabs.length">
       <TabItem v-for="tab in tabs" :key="tab.id" :tab="tab" />
+    </div>
+    <div v-else class="py-10 font-italic text-slate-400 text-sm text-center">
+      No audio played
     </div>
   </div>
 </template>
