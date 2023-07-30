@@ -20,6 +20,10 @@ export default defineManifest(async (env) => ({
     48: "src/assets/icon48.png",
     128: "src/assets/icon128.png",
   },
+  background: {
+    service_worker: "src/background.ts",
+    type: "module",
+  },
   host_permissions: ["<all_urls>"],
   permissions: ["tabs"],
 }));
