@@ -25,8 +25,11 @@ const toggleMute = () => {
 <template>
   <button class="flex items-center w-full gap-2 h-14 mb-1 p-2 last:mb-0 text-left cursor-pointer hover:bg-slate-900/10"
     @click="toggleMute">
-    <div class="line-clamp-2">
-      {{ tab.title }}
+    <div class="w-4">
+      <img :src="tab.favIconUrl" :alt="tab.title" />
+    </div>
+    <div class="flex-1 line-clamp-2">
+      <span>{{ tab.title }}</span>
     </div>
     <div class="ml-auto text-xl">
       <div v-if="muted" class="i-uil-volume-mute text-slate-600/50" />
